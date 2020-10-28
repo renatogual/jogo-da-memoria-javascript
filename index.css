@@ -49,3 +49,10 @@ body {
     transform: rotateY(180deg);
 }
 /* Animação flip card */
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+}
