@@ -1,3 +1,5 @@
+const cards = document.querySelectorAll('.card');
+
 $(() => {
     var hasFlippedCard = false;
     var firstCard, secondCard;
@@ -5,7 +7,6 @@ $(() => {
     
     function flipCard() {
         if(lockBoard) return;
-        // if($(this) === firstCard) return;
 
         $(this).addClass('flip');
         if(!hasFlippedCard) {
@@ -31,8 +32,8 @@ $(() => {
     function disableCards() {
         firstCard.off('click', flipCard);
         secondCard.off('click', flipCard);
-
         resetBoard();
+        endGame();
     }
 
     function unflipCards() {
@@ -50,13 +51,18 @@ $(() => {
         [firstCard, secondCard] = [null, null];
     }
 
-    //Invoked function
-    // (function shufle() {
-    //     $('.card').on((card) => {
-    //         let randomPosition = Math.floor(Math.random() * 12);
-    //         card.css('order', randomPosition);
-    //     });
-    // })();
+    function endGame() {
+        if ($('.card.flip').length == $('.card').length) {
+            $('.modal').modal().modal('open');
+        }
+    }
+
+    (function shufle() {
+        cards.forEach((card) => {
+            let randomPosition = Math.floor(Math.random() * 12);
+            card.style.order = randomPosition;
+        });
+    })();
 
     $('.card').on('click', flipCard);
 
