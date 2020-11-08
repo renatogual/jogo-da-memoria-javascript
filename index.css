@@ -69,6 +69,6 @@ body {
         font-size: 30px;
     }
     .modal .modal-content{
-        padding: 0;
+        padding: 10px;
     }
 }
