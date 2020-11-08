@@ -48,7 +48,7 @@ body {
 .card.flip {
     transform: rotateY(180deg);
 }
-/* Animação flip card */
+/* Modal */
 .modal-content {
     display: flex;
     flex-direction: column;
@@ -56,10 +56,19 @@ body {
     align-items: center;
     font-weight: 600;
 }
+.modal .modal-content{
+    padding-top: 20px;
+}
 
 @media screen and (max-width: 700px) {
     .memory-game {
         height: 370px;
         width: 350px;
+    }
+    .modal-content h1{
+        font-size: 50px;
+    }
+    .modal-content h2{
+        font-size: 30px;
     }
 }
